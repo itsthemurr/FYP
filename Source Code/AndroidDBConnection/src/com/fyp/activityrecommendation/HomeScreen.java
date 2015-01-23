@@ -18,11 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class JSONUseActivity extends Activity
+public class HomeScreen extends Activity
 {
-	 EditText byear;   // To take birthyear as input from user
-	 Button submit;    
-	 TextView tv;      // TextView to show the result of MySQL query 
 	 
 	 //To take create account details
 	 EditText username;
@@ -30,10 +27,7 @@ public class JSONUseActivity extends Activity
 	 EditText email;
 	 EditText country;
 	 EditText password;
-	 
-	 //To take sign in details
-	 EditText u_name; 
-	 EditText p_word; 	
+	 Button createaccount;
 	 
 	 String returnString;   // to store the result of MySQL query after decoding JSON
 	 
@@ -55,11 +49,10 @@ public class JSONUseActivity extends Activity
 		     email = (EditText) findViewById(R.id.editText3);	
 		     country = (EditText) findViewById(R.id.editText4);	
 		     password = (EditText) findViewById(R.id.editText5);	
-		     submit = (Button) findViewById(R.id.submitbutton);
-		     tv = (TextView) findViewById(R.id.showresult);
+		     createaccount = (Button) findViewById(R.id.createaccount);
 		                
 		     // define the action when user clicks on submit button
-		     submit.setOnClickListener
+		     createaccount.setOnClickListener
 		     (
 		    		 
 		    		 new View.OnClickListener()
@@ -69,8 +62,12 @@ public class JSONUseActivity extends Activity
 							     // declare parameters that are passed to PHP script i.e. the name "birthyear" and its value submitted by user   
 							     ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
 							          
-							     // define the parameter
-							     postParameters.add(new BasicNameValuePair("Desired Username",username.getText().toString()));
+							     // define the parameters
+							     postParameters.add(new BasicNameValuePair("username",username.getText().toString()));
+							     postParameters.add(new BasicNameValuePair("fullname",fullname.getText().toString()));
+							     postParameters.add(new BasicNameValuePair("email",email.getText().toString()));
+							     postParameters.add(new BasicNameValuePair("country",country.getText().toString()));
+							     postParameters.add(new BasicNameValuePair("password",password.getText().toString()));
 						          
 							     String response = null;
 						          
@@ -79,47 +76,11 @@ public class JSONUseActivity extends Activity
 						          {
 							        	  response = CustomHttpClient.executeHttpPost(
 							        	  
-							        	  "http://www.itsthemurr.com/PHP/CreateAccount.php",postParameters);
+							        	  "http://www.itsthemurr.sfdjnkmcom/PHP/CreateAccount.php",postParameters);
 							     
 							        	  // store the result returned by PHP script that runs MySQL query
 							        	  String result = response.toString();  
-							              
-							        	  //parse json data
-								         try
-								         {
-								                 returnString = "";
-								                 JSONArray jArray = new JSONArray(result);
-								                 
-								                 for(int i=0;i<jArray.length();i++)
-								                 {
-								                	 JSONObject json_data = jArray.getJSONObject(i);
-								                         Log.i
-								                         (
-								                        		 "log_tag","id: "+json_data.getInt("id")+
-								                                 ", name: "+json_data.getString("name")+
-								                                 ", sex: "+json_data.getInt("sex")+
-								                                 ", birthyear: "+json_data.getInt("birthyear")
-								                         );
-								                         
-								                         //Get an output to the screen
-								                         returnString += "\n" + json_data.getString("name") + " -> "+ json_data.getInt("birthyear");
-								                 }
-								         }
-								         
-								         catch(JSONException e)
-								         {
-								                 Log.e("log_tag", "Error parsing data "+e.toString());
-								         }
-								     
-								         try
-								         {
-								        	 tv.setText(returnString);
-								         }
-								         
-								         catch(Exception e)
-								         {
-								        	 Log.e("log_tag","Error in Display!" + e.toString());;          
-								         }   
+       
 						          }
 		          
 						          catch (Exception e)

@@ -75,7 +75,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Password:"
+        android:text="Choose a password:"
         android:gravity="center" />
     
     <EditText
@@ -86,12 +86,13 @@
     </EditText>
 
     <Button
-        android:id="@+id/submitbutton"
+        android:id="@+id/createaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create Account"
         android:layout_gravity="center"
          />
+    
     
    <TextView
         android:layout_width="fill_parent"
