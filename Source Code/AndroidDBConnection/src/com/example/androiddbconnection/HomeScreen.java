@@ -6,10 +6,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 
 import com.example.androiddbconnection.CustomHttpClient;
+import com.example.androiddbconnection.SignInActivity;
+
 
 import android.util.Log;
 import android.view.View;
@@ -62,10 +65,7 @@ public class HomeScreen extends Activity
 							          
 							     // define the parameters
 							     postParameters.add(new BasicNameValuePair("username",username.getText().toString()));
-							     postParameters.add(new BasicNameValuePair("fullname",fullname.getText().toString()));
-							     postParameters.add(new BasicNameValuePair("email",email.getText().toString()));
-							     postParameters.add(new BasicNameValuePair("country",country.getText().toString()));
-							     postParameters.add(new BasicNameValuePair("password",password.getText().toString()));
+							     
 						          
 							     String response = null;
 						          
@@ -79,13 +79,21 @@ public class HomeScreen extends Activity
 							        	  // store the result returned by PHP script that runs MySQL query
 							        	  String result = response.toString();  
        
+							        	  
 						          }
+						          
 		          
 						          catch (Exception e)
 						          {
 						        	  Log.e("log_tag","Error in http connection!!" + e.toString());     
 						          }
-		    			 }         
+						          
+						          Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
+						          startActivity(intent);
+						          
+		    			 }
+		    			 
+		    			 
 		    		 }
 		    );
 	    }

@@ -1538,6 +1538,11 @@ containing a value of this type.
          */
         public static final int abc_text_size_title_material_toolbar=0x7f070012;
         /**  Default screen margins, per the Android Design guidelines. 
+
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
          */
         public static final int activity_horizontal_margin=0x7f07002b;
         public static final int activity_vertical_margin=0x7f07002c;
@@ -1645,6 +1650,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090030;
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
+        public static final int action_settings=0x7f090049;
         public static final int activity_chooser_view_content=0x7f090023;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
@@ -1755,10 +1761,12 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_jsonuse=0x7f030017;
-        public static final int support_simple_spinner_dropdown_item=0x7f030018;
+        public static final int activity_sign_in=0x7f030018;
+        public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class menu {
         public static final int activity_jsonuse=0x7f0c0000;
+        public static final int sign_in=0x7f0c0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1814,9 +1822,11 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000d;
+        public static final int action_settings=0x7f0a0013;
         public static final int app_name=0x7f0a000f;
         public static final int hello_world=0x7f0a0010;
         public static final int menu_settings=0x7f0a0011;
+        public static final int title_activity_sign_in=0x7f0a0012;
     }
     public static final class style {
         /** 
