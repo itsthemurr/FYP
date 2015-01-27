@@ -1,4 +1,4 @@
-package com.fyp.activityrecommendation;
+package com.example.androiddbconnection;
 
 import java.io.BufferedReader;
 import java.io.IOException;

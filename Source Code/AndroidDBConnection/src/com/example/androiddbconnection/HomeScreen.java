@@ -1,4 +1,4 @@
-package com.fyp.activityrecommendation;
+package com.example.androiddbconnection;
 import java.util.ArrayList;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -9,8 +9,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
 
-import com.example.androiddbconnection.R;
-import com.fyp.activityrecommendation.CustomHttpClient;
+import com.example.androiddbconnection.CustomHttpClient;
 
 import android.util.Log;
 import android.view.View;
@@ -41,8 +40,7 @@ public class HomeScreen extends Activity
 		        
 		     super.onCreate(savedInstanceState);
 		        
-		     setContentView(R.layout.activity_jsonuse);
-		        
+		     setContentView(R.layout.activity_jsonuse);		        
 		        
 		     username = (EditText) findViewById(R.id.editText1);
 		     fullname = (EditText) findViewById(R.id.editText2);	
@@ -51,7 +49,7 @@ public class HomeScreen extends Activity
 		     password = (EditText) findViewById(R.id.editText5);	
 		     createaccount = (Button) findViewById(R.id.createaccount);
 		                
-		     // define the action when user clicks on submit button
+		     // define the action when user clicks on create account button
 		     createaccount.setOnClickListener
 		     (
 		    		 
@@ -59,7 +57,7 @@ public class HomeScreen extends Activity
 		    		 {        
 		    			 public void onClick(View v)
 		    			 {
-							     // declare parameters that are passed to PHP script i.e. the name "birthyear" and its value submitted by user   
+							     // declare parameters that are passed to PHP script i.e. UserName, Fullname  
 							     ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
 							          
 							     // define the parameters
@@ -76,7 +74,7 @@ public class HomeScreen extends Activity
 						          {
 							        	  response = CustomHttpClient.executeHttpPost(
 							        	  
-							        	  "http://www.itsthemurr.sfdjnkmcom/PHP/CreateAccount.php",postParameters);
+							        	  "http://www.itsthemurr.com/PHP/CreateAccount.php",postParameters);
 							     
 							        	  // store the result returned by PHP script that runs MySQL query
 							        	  String result = response.toString();  
