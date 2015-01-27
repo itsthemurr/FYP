@@ -65,7 +65,10 @@ public class HomeScreen extends Activity
 							          
 							     // define the parameters
 							     postParameters.add(new BasicNameValuePair("username",username.getText().toString()));
-							     
+							     postParameters.add(new BasicNameValuePair("fullname",fullname.getText().toString()));
+							     postParameters.add(new BasicNameValuePair("email",email.getText().toString()));
+							     postParameters.add(new BasicNameValuePair("country",country.getText().toString()));
+							     postParameters.add(new BasicNameValuePair("password",password.getText().toString()));
 						          
 							     String response = null;
 						          
