@@ -436,11 +436,13 @@ int layout abc_search_view 0x7f030015
 int layout abc_simple_dropdown_hint 0x7f030016
 int layout activity_create_account 0x7f030017
 int layout activity_launch_screen 0x7f030018
-int layout activity_sign_in 0x7f030019
-int layout support_simple_spinner_dropdown_item 0x7f03001a
+int layout activity_questions 0x7f030019
+int layout activity_sign_in 0x7f03001a
+int layout support_simple_spinner_dropdown_item 0x7f03001b
 int menu activity_jsonuse 0x7f0c0000
 int menu launch_screen 0x7f0c0001
-int menu sign_in 0x7f0c0002
+int menu questions 0x7f0c0002
+int menu sign_in 0x7f0c0003
 int string abc_action_bar_home_description 0x7f0a0001
 int string abc_action_bar_home_description_format 0x7f0a0004
 int string abc_action_bar_home_subtitle_description_format 0x7f0a0005
@@ -461,6 +463,7 @@ int string app_name 0x7f0a000f
 int string hello_world 0x7f0a0010
 int string menu_settings 0x7f0a0011
 int string title_activity_launch_screen 0x7f0a0014
+int string title_activity_questions 0x7f0a0015
 int string title_activity_sign_in 0x7f0a0012
 int style AppBaseTheme 0x7f0b00eb
 int style AppTheme 0x7f0b00ec
