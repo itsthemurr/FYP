@@ -15,21 +15,28 @@
 	<string name="age">What is your age range?</string>
     <string name="male">Male</string>
 	<string name="female">Female</string>
-    <string name="eleven">11\-14</string>
-	<string name="fifteen">15\-17</string>
-	<string name="eighteen">18\-24</string>
-	<string name="twentyfive">25\-34</string>
-	<string name="thirtyfive">35\-44</string>
-	<string name="fortyfive">45\-54</string>
-	<string name="fiftyfive">55\-64</string>
+    <string name="eleven">11 to 14</string>
+	<string name="fifteen">15 to 17</string>
+	<string name="eighteen">18 to 24</string>
+	<string name="twentyfive">25 to 34</string>
+	<string name="thirtyfive">35 to 44</string>
+	<string name="fortyfive">45 to 54</string>
+	<string name="fiftyfive">55 to 64</string>
 	<string name="sixtyfive">65+</string>
 	
-	<string name="active">On a scale of 1\-5 how active are you?</string>
+	<string name="active">On a scale of 1 to 5 how active are you?</string>
 	<string name="one">1</string>
 	<string name="two">2</string>
 	<string name="three">3</string>
 	<string name="four">4</string>
 	<string name="five">5</string>
+	
+	<string name="cultural">On a scale of 1 to 5 how cultural are you?</string>
+	<string name="culone">1</string>
+	<string name="cultwo">2</string>
+	<string name="culthree">3</string>
+	<string name="culfour">4</string>
+	<string name="culfive">5</string>
 	
     
 </resources>

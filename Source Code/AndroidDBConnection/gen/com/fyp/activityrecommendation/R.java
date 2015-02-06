@@ -1636,6 +1636,8 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020033;
     }
     public static final class id {
+        public static final int actfive=0x7f090058;
+        public static final int actfour=0x7f090057;
         public static final int action_bar=0x7f090033;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090032;
@@ -1649,8 +1651,11 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090030;
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
-        public static final int action_settings=0x7f09005a;
+        public static final int action_settings=0x7f09005f;
         public static final int activity_chooser_view_content=0x7f090023;
+        public static final int actone=0x7f090054;
+        public static final int actthree=0x7f090056;
+        public static final int acttwo=0x7f090055;
         public static final int ageeighteen=0x7f09004e;
         public static final int ageeleven=0x7f09004c;
         public static final int agefifteen=0x7f09004d;
@@ -1665,6 +1670,11 @@ containing a value of this type.
         public static final int checkbox=0x7f09002b;
         public static final int collapseActionView=0x7f090015;
         public static final int createaccount=0x7f090048;
+        public static final int culfive=0x7f09005d;
+        public static final int culfour=0x7f09005c;
+        public static final int culone=0x7f090059;
+        public static final int culthree=0x7f09005b;
+        public static final int cultwo=0x7f09005a;
         public static final int decor_content_parent=0x7f090031;
         public static final int default_activity_button=0x7f090026;
         public static final int dialog=0x7f090019;
@@ -1681,8 +1691,6 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f090024;
         public static final int expanded_menu=0x7f09002a;
         public static final int female=0x7f09004b;
-        public static final int five=0x7f090058;
-        public static final int four=0x7f090057;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f090028;
@@ -1691,13 +1699,12 @@ containing a value of this type.
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090027;
         public static final int male=0x7f09004a;
-        public static final int menu_settings=0x7f090059;
+        public static final int menu_settings=0x7f09005e;
         public static final int middle=0x7f09001d;
         public static final int never=0x7f090017;
         public static final int next=0x7f090047;
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
-        public static final int one=0x7f090054;
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
         public static final int radio=0x7f09002d;
@@ -1719,10 +1726,8 @@ containing a value of this type.
         public static final int split_action_bar=0x7f090004;
         public static final int submit_area=0x7f09003e;
         public static final int tabMode=0x7f09000c;
-        public static final int three=0x7f090056;
         public static final int title=0x7f090029;
         public static final int top=0x7f09001f;
-        public static final int two=0x7f090055;
         public static final int up=0x7f090001;
         public static final int useLogo=0x7f090013;
         public static final int withText=0x7f090018;
@@ -1847,6 +1852,12 @@ containing a value of this type.
         public static final int active=0x7f0a0022;
         public static final int age=0x7f0a0017;
         public static final int app_name=0x7f0a000f;
+        public static final int culfive=0x7f0a002d;
+        public static final int culfour=0x7f0a002c;
+        public static final int culone=0x7f0a0029;
+        public static final int culthree=0x7f0a002b;
+        public static final int cultural=0x7f0a0028;
+        public static final int cultwo=0x7f0a002a;
         public static final int eighteen=0x7f0a001c;
         public static final int eleven=0x7f0a001a;
         public static final int female=0x7f0a0019;
