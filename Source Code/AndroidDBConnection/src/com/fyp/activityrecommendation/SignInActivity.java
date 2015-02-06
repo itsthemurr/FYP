@@ -1,12 +1,12 @@
 package com.fyp.activityrecommendation;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -21,7 +21,8 @@ public class SignInActivity extends Activity
 		 EditText username;
 		 EditText password;
 		 Button signin;
-		 Button goback;
+		 
+		 
 		 
 		 String returnString;   // to store the result of MySQL query after decoding JSON
 		 
@@ -40,21 +41,6 @@ public class SignInActivity extends Activity
 			     username = (EditText) findViewById(R.id.editText1);
 			     password = (EditText) findViewById(R.id.editText2);
 			     signin = (Button) findViewById(R.id.signin);
-			     goback = (Button) findViewById(R.id.createacc);
-			                
-			     goback.setOnClickListener
-			     (
-			    		 new View.OnClickListener()
-			    		 {        
-			    			 public void onClick(View v)
-			    			 {
-			    				 Intent intent = new Intent(getApplicationContext(), CreateAccActivity.class);
-						         startActivity(intent);
-			    			 }
-			    		 }
-			    
-			     );
-			     
 			     
 			     // define the action when user clicks on create account button
 			     signin.setOnClickListener

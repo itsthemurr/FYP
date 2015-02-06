@@ -1636,7 +1636,6 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020033;
     }
     public static final class id {
-        public static final int SignIn=0x7f090047;
         public static final int action_bar=0x7f090033;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090032;
@@ -1657,8 +1656,7 @@ containing a value of this type.
         public static final int bottom=0x7f09001e;
         public static final int checkbox=0x7f09002b;
         public static final int collapseActionView=0x7f090015;
-        public static final int createacc=0x7f090049;
-        public static final int createaccount=0x7f090046;
+        public static final int createaccount=0x7f090048;
         public static final int decor_content_parent=0x7f090031;
         public static final int default_activity_button=0x7f090026;
         public static final int dialog=0x7f090019;
@@ -1669,6 +1667,7 @@ containing a value of this type.
         public static final int editText3=0x7f090043;
         public static final int editText4=0x7f090044;
         public static final int editText5=0x7f090045;
+        public static final int editText6=0x7f090046;
         public static final int edit_query=0x7f090035;
         public static final int end=0x7f09001c;
         public static final int expand_activities_button=0x7f090024;
@@ -1683,6 +1682,7 @@ containing a value of this type.
         public static final int menu_settings=0x7f09004a;
         public static final int middle=0x7f09001d;
         public static final int never=0x7f090017;
+        public static final int next=0x7f090047;
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
         public static final int progress_circular=0x7f090007;
@@ -1702,7 +1702,7 @@ containing a value of this type.
         public static final int showCustom=0x7f090010;
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
-        public static final int signin=0x7f090048;
+        public static final int signin=0x7f090049;
         public static final int split_action_bar=0x7f090004;
         public static final int submit_area=0x7f09003e;
         public static final int tabMode=0x7f09000c;

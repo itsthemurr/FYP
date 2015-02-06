@@ -19,94 +19,70 @@
     	android:textSize="20sp"
     	android:gravity="center"/>
     
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Desired Username:"
-        android:gravity="center" />
-
     <EditText
         android:id="@+id/editText1"
+        android:hint="Desired Username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" >        
     </EditText>
     
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Full Name:"
-        android:gravity="center" />
+    
     
      <EditText
         android:id="@+id/editText2"
+        android:hint="Full Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" >        
     </EditText>
     
-     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Email:"
-        android:gravity="center" />   
+        
      
     <EditText
         android:id="@+id/editText3"
+        android:hint="Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" >        
     </EditText>
     
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Country:"
-        android:gravity="center" />
+    
     
     <EditText
         android:id="@+id/editText4"
+        android:hint="Country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" >        
     </EditText>
     
     
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose a password:"
-        android:gravity="center" />
-    
     <EditText
         android:id="@+id/editText5"
+        android:hint="Password"
+        android:password = "true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" >        
+    </EditText>
+    
+    <EditText
+        android:id="@+id/editText6"
+        android:hint="Confirm Password"
+        android:password = "true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" >        
     </EditText>
 
     <Button
-        android:id="@+id/createaccount"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="Next"
         android:layout_gravity="center"
          />
     
-    
-   <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Already signed up?" 
-    	android:gravity="center"
-    	/>
-    
- 	<Button
-        android:id="@+id/SignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:layout_gravity="center"
-         />
     
 </LinearLayout>

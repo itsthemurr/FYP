@@ -1,6 +1,6 @@
 package com.fyp.activityrecommendation;
 import java.util.ArrayList;
-
+import java.util.regex.Pattern;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CreateAccActivity extends Activity
 {
@@ -23,9 +24,26 @@ public class CreateAccActivity extends Activity
 	 EditText email;
 	 EditText country;
 	 EditText password;
-	 Button createaccount;
+	 Button next;
+	 EditText confirmpassword;
 	 
-	
+	 String returnString; 
+
+	 public final Pattern EMAIL = Pattern.compile
+	(
+             "[a-zA-Z0-9+._%-+]{1,256}" +
+             "@" +
+             "[a-zA-Z0-9][a-zA-Z0-9-]{0,64}" +
+             "(" +
+             "." +
+             "[a-zA-Z0-9][a-zA-Z0-9-]{0,25}" +
+             ")+"
+	);
+	 
+	 private boolean checkEmail(String email)
+	 {
+	        return EMAIL.matcher(email).matches();
+	 }
 	 
 	 
 	    /** Called when the activity is first created. */
@@ -45,13 +63,14 @@ public class CreateAccActivity extends Activity
 		     email = (EditText) findViewById(R.id.editText3);	
 		     country = (EditText) findViewById(R.id.editText4);	
 		     password = (EditText) findViewById(R.id.editText5);	
-		     createaccount = (Button) findViewById(R.id.createaccount);
+		     next = (Button) findViewById(R.id.next);
+		     confirmpassword = (EditText) findViewById(R.id.editText6);
 		     
 		     
 		     
 		     
 		     // define the action when user clicks on create account button
-		     createaccount.setOnClickListener
+		     next.setOnClickListener
 		     (			
 		    		 
 		    		 new View.OnClickListener()
@@ -60,7 +79,9 @@ public class CreateAccActivity extends Activity
 		    		 {        
 			    			 public void onClick(View v)
 			    			 {
-		    				 
+			    				 
+			    				 String emailval=email.getText().toString();
+
 			    				 //Username, fullname, country & password must be of a certain length
 			    				 if( username.getText().toString().length() <= 4 )	 
 			    				 {
@@ -69,6 +90,10 @@ public class CreateAccActivity extends Activity
 			    				 else if (fullname.getText().toString().length() <= 6)
 			    				 {
 			    					 fullname.setError("Please enter your full name");
+			    				 }
+			    				 else if(email.getText().toString().length() < 5 || checkEmail(emailval) == false)
+			    				 {
+			    					 email.setError("Invalid Email Address");	
 			    				 }
 			    				 else if(country.getText().toString().length() <=3)
 			    				 {
@@ -80,13 +105,16 @@ public class CreateAccActivity extends Activity
 			    				 }
 			    				 else 
 						         {
+			    					 if (password.getText().toString().equals(confirmpassword.getText().toString()))
+			    					 {
 			    					 
 			    						 
-				    					 Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
+				    					  Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
 								          startActivity(intent);
 								          
 								          // declare parameters that are passed to PHP script i.e. UserName, Fullname  
 										  ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+										  
 										          
 										  // define the parameters
 										  postParameters.add(new BasicNameValuePair("username",username.getText().toString()));
@@ -95,27 +123,32 @@ public class CreateAccActivity extends Activity
 										  postParameters.add(new BasicNameValuePair("country",country.getText().toString()));
 										  postParameters.add(new BasicNameValuePair("password",password.getText().toString()));
 									          
-										  String response = null;
-										     
+										  
+										  
 										     
 									          
 										  // call executeHttpPost method passing necessary parameters 
 										  try 
 										  {
-											  response = CustomHttpClient.executeHttpPost(
+											  CustomHttpClient.executeHttpPost(
 										        	  
 													  " http://fyptest.site50.net/createaccount.php",postParameters);
+											  
+										      
 										     
 										      // store the result returned by PHP script that runs MySQL query
-										  	  
-			             	  
+		             	  
 										  }
-									          
-					          
+
 									      catch (Exception e)
 									      {
 									      	  Log.e("log_tag","Error in http connection!!" + e.toString());     
 								          }
+			    					 }
+			    					 else
+			    					 {
+			    						 confirmpassword.setError("Passwords must match");
+			    					 }
 			    					 
 			    					 
 						          }
@@ -125,9 +158,15 @@ public class CreateAccActivity extends Activity
 							          
 			    				 
 		    			 }
+			    			 
+			    			 
 		    			 
 		    			 
 		    		 }
 		    );
+		     
+		     
 	    }
+	    
+	   
 }

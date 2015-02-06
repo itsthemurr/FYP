@@ -334,7 +334,6 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f020030
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f020031
 int drawable abc_textfield_search_material 0x7f020032
 int drawable ic_launcher 0x7f020033
-int id SignIn 0x7f090047
 int id action_bar 0x7f090033
 int id action_bar_activity_content 0x7f090003
 int id action_bar_container 0x7f090032
@@ -355,8 +354,7 @@ int id beginning 0x7f09001b
 int id bottom 0x7f09001e
 int id checkbox 0x7f09002b
 int id collapseActionView 0x7f090015
-int id createacc 0x7f090049
-int id createaccount 0x7f090046
+int id createaccount 0x7f090048
 int id decor_content_parent 0x7f090031
 int id default_activity_button 0x7f090026
 int id dialog 0x7f090019
@@ -367,6 +365,7 @@ int id editText2 0x7f090042
 int id editText3 0x7f090043
 int id editText4 0x7f090044
 int id editText5 0x7f090045
+int id editText6 0x7f090046
 int id edit_query 0x7f090035
 int id end 0x7f09001c
 int id expand_activities_button 0x7f090024
@@ -381,6 +380,7 @@ int id list_item 0x7f090027
 int id menu_settings 0x7f09004a
 int id middle 0x7f09001d
 int id never 0x7f090017
+int id next 0x7f090047
 int id none 0x7f09000f
 int id normal 0x7f09000b
 int id progress_circular 0x7f090007
@@ -400,7 +400,7 @@ int id shortcut 0x7f09002c
 int id showCustom 0x7f090010
 int id showHome 0x7f090011
 int id showTitle 0x7f090012
-int id signin 0x7f090048
+int id signin 0x7f090049
 int id split_action_bar 0x7f090004
 int id submit_area 0x7f09003e
 int id tabMode 0x7f09000c
