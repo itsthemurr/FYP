@@ -1,7 +1,6 @@
 package com.fyp.activityrecommendation;
 
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;

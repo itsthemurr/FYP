@@ -6,7 +6,8 @@
 	<LinearLayout 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:orientation="vertical" >
+	    android:orientation="vertical" 
+	    >
 
 		<TextView
 		        android:layout_width="fill_parent"
@@ -16,6 +17,7 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:orientation="vertical">
+		    
 		    <RadioButton android:id="@+id/male"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
@@ -101,31 +103,31 @@
 			<RadioButton android:id="@+id/actone"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="@string/one"
+		        android:text="@string/actone"
 		        android:onClick="onRadioButtonClicked"/>
 			
 			<RadioButton android:id="@+id/acttwo"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="@string/two"
+		        android:text="@string/acttwo"
 		        android:onClick="onRadioButtonClicked"/>
 			
 			<RadioButton android:id="@+id/actthree"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="@string/three"
+		        android:text="@string/actthree"
 		        android:onClick="onRadioButtonClicked"/>
 			
 			<RadioButton android:id="@+id/actfour"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="@string/four"
+		        android:text="@string/actfour"
 		        android:onClick="onRadioButtonClicked"/>
 			
 			<RadioButton android:id="@+id/actfive"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="@string/five"
+		        android:text="@string/actfive"
 		        android:onClick="onRadioButtonClicked"/>
 		</RadioGroup>
 		
@@ -168,6 +170,92 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="@string/culfive"
+		        android:onClick="onRadioButtonClicked"/>
+		</RadioGroup>
+		
+	    
+	    
+	    
+	    <RadioGroup
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical">
+			<TextView
+		 		android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			    android:text= "@string/outdoors" 
+			         />
+			<RadioButton android:id="@+id/outone"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/outone"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/outtwo"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/outtwo"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/outthree"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/outthree"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/outfour"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/outfour"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/outfive"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/outfive"
+		        android:onClick="onRadioButtonClicked"/>
+		</RadioGroup>
+		
+	    
+	    
+	    
+	    <RadioGroup
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical">
+			<TextView
+		 		android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			    android:text= "@string/adventurous" 
+			         />
+			<RadioButton android:id="@+id/advone"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/advone"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/advtwo"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/advtwo"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/advthree"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/advthree"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/advfour"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/advfour"
+		        android:onClick="onRadioButtonClicked"/>
+			
+			<RadioButton android:id="@+id/advfive"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/advfive"
 		        android:onClick="onRadioButtonClicked"/>
 		</RadioGroup>
 		

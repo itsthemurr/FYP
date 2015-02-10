@@ -1651,11 +1651,16 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090030;
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
-        public static final int action_settings=0x7f09005f;
+        public static final int action_settings=0x7f090069;
         public static final int activity_chooser_view_content=0x7f090023;
         public static final int actone=0x7f090054;
         public static final int actthree=0x7f090056;
         public static final int acttwo=0x7f090055;
+        public static final int advfive=0x7f090067;
+        public static final int advfour=0x7f090066;
+        public static final int advone=0x7f090063;
+        public static final int advthree=0x7f090065;
+        public static final int advtwo=0x7f090064;
         public static final int ageeighteen=0x7f09004e;
         public static final int ageeleven=0x7f09004c;
         public static final int agefifteen=0x7f09004d;
@@ -1699,12 +1704,17 @@ containing a value of this type.
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090027;
         public static final int male=0x7f09004a;
-        public static final int menu_settings=0x7f09005e;
+        public static final int menu_settings=0x7f090068;
         public static final int middle=0x7f09001d;
         public static final int never=0x7f090017;
         public static final int next=0x7f090047;
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
+        public static final int outfive=0x7f090062;
+        public static final int outfour=0x7f090061;
+        public static final int outone=0x7f09005e;
+        public static final int outthree=0x7f090060;
+        public static final int outtwo=0x7f09005f;
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
         public static final int radio=0x7f09002d;
@@ -1848,8 +1858,19 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000d;
+        public static final int actfive=0x7f0a0027;
+        public static final int actfour=0x7f0a0026;
         public static final int action_settings=0x7f0a0013;
         public static final int active=0x7f0a0022;
+        public static final int actone=0x7f0a0023;
+        public static final int actthree=0x7f0a0025;
+        public static final int acttwo=0x7f0a0024;
+        public static final int adventurous=0x7f0a0034;
+        public static final int advfive=0x7f0a0039;
+        public static final int advfour=0x7f0a0038;
+        public static final int advone=0x7f0a0035;
+        public static final int advthree=0x7f0a0037;
+        public static final int advtwo=0x7f0a0036;
         public static final int age=0x7f0a0017;
         public static final int app_name=0x7f0a000f;
         public static final int culfive=0x7f0a002d;
@@ -1863,22 +1884,23 @@ containing a value of this type.
         public static final int female=0x7f0a0019;
         public static final int fifteen=0x7f0a001b;
         public static final int fiftyfive=0x7f0a0020;
-        public static final int five=0x7f0a0027;
         public static final int fortyfive=0x7f0a001f;
-        public static final int four=0x7f0a0026;
         public static final int gender=0x7f0a0016;
         public static final int hello_world=0x7f0a0010;
         public static final int male=0x7f0a0018;
         public static final int menu_settings=0x7f0a0011;
-        public static final int one=0x7f0a0023;
+        public static final int outdoors=0x7f0a002e;
+        public static final int outfive=0x7f0a0033;
+        public static final int outfour=0x7f0a0032;
+        public static final int outone=0x7f0a002f;
+        public static final int outthree=0x7f0a0031;
+        public static final int outtwo=0x7f0a0030;
         public static final int sixtyfive=0x7f0a0021;
         public static final int thirtyfive=0x7f0a001e;
-        public static final int three=0x7f0a0025;
         public static final int title_activity_launch_screen=0x7f0a0014;
         public static final int title_activity_questions=0x7f0a0015;
         public static final int title_activity_sign_in=0x7f0a0012;
         public static final int twentyfive=0x7f0a001d;
-        public static final int two=0x7f0a0024;
     }
     public static final class style {
         /** 

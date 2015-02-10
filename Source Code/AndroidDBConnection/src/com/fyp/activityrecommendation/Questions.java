@@ -1,7 +1,6 @@
 package com.fyp.activityrecommendation;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
@@ -22,6 +21,8 @@ public class Questions extends Activity
 	int age = 0;
 	int active = 0;
 	int cultural = 0;
+	int outdoors = 0;
+	int adventurous = 0;
 	
 	public void onRadioButtonClicked(View view)
 	{
@@ -123,6 +124,54 @@ public class Questions extends Activity
 	            if (checked)
 	            	cultural = 5;
 	            break;
+	            
+	            
+	            
+	        //How outdoory is the individual?
+	        case R.id.outone:
+	            if (checked)
+	            	outdoors = 1;
+	            break;
+	        case R.id.outtwo:
+	            if (checked)
+	            	outdoors = 2;
+	            break;
+	        case R.id.outthree:
+	            if (checked)
+	            	outdoors = 3;
+	            break;
+	        case R.id.outfour:
+	            if (checked)
+	            	outdoors = 4;
+	            break;
+	        case R.id.outfive:
+	            if (checked)
+	            	outdoors = 5;
+	            break;
+	            
+	            
+	          //How adventurous is the individual?
+	        case R.id.advone:
+	            if (checked)
+	            	adventurous = 1;
+	            break;
+	        case R.id.advtwo:
+	            if (checked)
+	            	adventurous = 2;
+	            break;
+	        case R.id.advthree:
+	            if (checked)
+	            	adventurous = 3;
+	            break;
+	        case R.id.advfour:
+	            if (checked)
+	            	adventurous = 4;
+	            break;
+	        case R.id.advfive:
+	            if (checked)
+	            	adventurous = 5;
+	            break;
+	            
 	            
 	            
 	    }

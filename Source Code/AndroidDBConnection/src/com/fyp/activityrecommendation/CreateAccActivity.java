@@ -4,6 +4,9 @@ import java.util.regex.Pattern;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,24 +22,20 @@ public class CreateAccActivity extends Activity
 {
 	 
 	 //To take create account details
-	 EditText username;
-	 EditText fullname;
-	 EditText email;
-	 EditText country;
-	 EditText password;
+	 EditText username, fullname, email, country, password, confirmpassword;
 	 Button next;
-	 EditText confirmpassword;
 	 
 	 String returnString; 
-
+ 
+	 //Email validation (Setting the format & length)
 	 public final Pattern EMAIL = Pattern.compile
 	(
              "[a-zA-Z0-9+._%-+]{1,256}" +
              "@" +
-             "[a-zA-Z0-9][a-zA-Z0-9-]{0,64}" +
+             "[a-zA-Z0-9][a-zA-Z0-9-]{1,64}" +
              "(" +
              "." +
-             "[a-zA-Z0-9][a-zA-Z0-9-]{0,25}" +
+             "[a-zA-Z0-9][a-zA-Z0-9-]{2,25}" +
              ")+"
 	);
 	 
@@ -45,6 +44,35 @@ public class CreateAccActivity extends Activity
 	        return EMAIL.matcher(email).matches();
 	 }
 	 
+	 //Username validation (Setting the format & length)
+	 public final Pattern USERNAME = Pattern.compile("[a-zA-Z0-9_.]{4,40}");
+	 
+	 private boolean checkUsername(String username)
+	 {
+		 	return USERNAME.matcher(username).matches();
+	 }
+	 
+	//Fullname validation (Setting the format & length)
+	 public final Pattern FULLNAME = Pattern.compile("[a-zA-Z0-9 ']{1,100}");
+	 
+	 private boolean checkFullname(String fullname)
+	 {
+		 	return FULLNAME.matcher(fullname).matches();
+	 }
+	 
+	 //Country validation (Setting the format & length)
+	 public final Pattern COUNTRY = Pattern.compile("[a-zA-Z ]{3,60}");
+	 private boolean checkCountry(String country)
+	 {
+		 	return COUNTRY.matcher(country).matches();
+	 }
+	 
+	 //Password validation (Setting the format & length)
+	 public final Pattern PASSWORD = Pattern.compile("[a-zA-Z0-9]{6,50}");
+	 private boolean checkPassword(String password)
+	 {
+		 	return PASSWORD.matcher(password).matches();
+	 }
 	 
 	    /** Called when the activity is first created. */
 	    @Override
@@ -74,99 +102,140 @@ public class CreateAccActivity extends Activity
 		     (			
 		    		 
 		    		 new View.OnClickListener()
-		    		 
-		    		 
 		    		 {        
 			    			 public void onClick(View v)
 			    			 {
 			    				 
 			    				 String emailval=email.getText().toString();
-
-			    				 //Username, fullname, country & password must be of a certain length
-			    				 if( username.getText().toString().length() <= 4 )	 
+			    				 String usernameval=username.getText().toString();
+			    				 String countryval=country.getText().toString();
+			    				 String passwordval=password.getText().toString();
+			    				 String fullnameval=fullname.getText().toString();
+			    				 
+			    				 //Username, fullname, country & password must be of a certain length 
+			    				 if(checkUsername(usernameval) == false)
+		    					 {
+		    						 username.setError("Username must be at least 5 characters long & can only contain letters, numbers, '_' or a '.'");
+		    					 }
+			    				 if (checkFullname(fullnameval) == false)
 			    				 {
-			    					 username.setError( "Username must be at least 5 characters long" );
+			    					 fullname.setError("Names should only contain letters");
 			    				 }
-			    				 else if (fullname.getText().toString().length() <= 6)
-			    				 {
-			    					 fullname.setError("Please enter your full name");
-			    				 }
-			    				 else if(email.getText().toString().length() < 5 || checkEmail(emailval) == false)
+			    				 if(checkEmail(emailval) == false)
 			    				 {
 			    					 email.setError("Invalid Email Address");	
 			    				 }
-			    				 else if(country.getText().toString().length() <=3)
+			    				 if(checkCountry(countryval) == false)
 			    				 {
-			    					  country.setError("Valid country required");   
+			    					  country.setError("Not a valid country");   
 			    				 }
-			    				 else if(password.getText().toString().length() <= 6)
+			    				 if(checkPassword(passwordval) == false)
 			    				 {
-			    					 password.setError("Password must be at least 7 charachters long");
+			    					 password.setError("Password must be at least 6 charachters long & contain letters and number ONLY");
 			    				 }
-			    				 else 
-						         {
-			    					 if (password.getText().toString().equals(confirmpassword.getText().toString()))
-			    					 {
-			    					 
-			    						 
-				    					  Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
-								          startActivity(intent);
-								          
-								          // declare parameters that are passed to PHP script i.e. UserName, Fullname  
-										  ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
-										  
-										          
-										  // define the parameters
-										  postParameters.add(new BasicNameValuePair("username",username.getText().toString()));
-										  postParameters.add(new BasicNameValuePair("fullname",fullname.getText().toString()));
-										  postParameters.add(new BasicNameValuePair("email",email.getText().toString()));
-										  postParameters.add(new BasicNameValuePair("country",country.getText().toString()));
-										  postParameters.add(new BasicNameValuePair("password",password.getText().toString()));
-									          
-										  
-										  
-										     
-									          
-										  // call executeHttpPost method passing necessary parameters 
-										  try 
-										  {
-											  CustomHttpClient.executeHttpPost(
-										        	  
-													  " http://fyptest.site50.net/createaccount.php",postParameters);
-											  
-										      
-										     
-										      // store the result returned by PHP script that runs MySQL query
-		             	  
-										  }
 
-									      catch (Exception e)
-									      {
-									      	  Log.e("log_tag","Error in http connection!!" + e.toString());     
-								          }
-			    					 }
-			    					 else
-			    					 {
-			    						 confirmpassword.setError("Passwords must match");
-			    					 }
+			    				 if(checkUsername(usernameval) == true && checkFullname(fullnameval) == true && checkEmail(emailval) == true
+			    							 && checkCountry(countryval) == true && checkPassword(passwordval) == true)
+			    				 {
+			    						 
+				    					 if (password.getText().toString().equals(confirmpassword.getText().toString()))
+				    					 {
+	
+									          // declare parameters that are passed to PHP script i.e. UserName, Fullname  
+											  ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+											          
+											  // define the parameters
+											  postParameters.add(new BasicNameValuePair("username",username.getText().toString()));
+											  postParameters.add(new BasicNameValuePair("fullname",fullname.getText().toString()));
+											  postParameters.add(new BasicNameValuePair("email",email.getText().toString()));
+											  postParameters.add(new BasicNameValuePair("country",country.getText().toString()));
+											  postParameters.add(new BasicNameValuePair("password",password.getText().toString()));
+										          
+											  String response = null;
+											  
+											  // call executeHttpPost method passing necessary parameters 
+											  try 
+											  {
+												  CustomHttpClient.executeHttpPost(
+											        	  
+														  response = "http://fyptest.site50.net/CreateAccount.php",postParameters);
+												  
+												  String result = response.toString(); 
+												  
+												  try
+												  {
+									        			returnString = "";
+									        			JSONArray jArray = new JSONArray(result);
+									        			
+									        			for(int i=0;i<jArray.length();i++)
+									        			{
+									                         JSONObject json_data = jArray.getJSONObject(i);
+									                         Log.i("log_tag",json_data.getString("output")       
+									                         );
+									                         
+									                         int returnVal = Integer.parseInt(returnString);
+									                         
+									                         if (returnVal == 1)
+									                         {
+									                        	 username.setError("Username already exists");
+									                         }
+									                         if (returnVal == 2)
+									                         {
+									                        	 Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
+									    				         startActivity(intent);
+									                         }
+									                         
+									        			}
+									        		}
+									        		
+									        		catch(JSONException e)
+									        		{
+									        			Log.e("log_tag", "Error parsing data "+e.toString());
+									        		}
+											      
+												  if (result == "one")
+											      {
+											    	  username.setError("Username already in use");
+											      }
+											      else if (result == "two")
+											      {
+											    	  Intent intent = new Intent(getApplicationContext(), Questions.class);
+											          startActivity(intent);
+											      }
+											      
+											     
+											      // store the result returned by PHP script that runs MySQL query
+			             	  
+											  }
+	
+										      catch (Exception e)
+										      {
+										      	  Log.e("log_tag","Error in http connection!!" + e.toString());     
+									          }
+				    					 }
+				    					 
+				    					 else
+				    					 {
+				    						 confirmpassword.setError("Passwords must match");
+				    					 }
+			    				 }
 			    					 
 			    					 
-						          }
+			    			 }
 						          
 							          
 							          
 							          
 			    				 
-		    			 }
-			    			 
-			    			 
-		    			 
-		    			 
 		    		 }
-		    );
+			    			 
+			    			 
+		    			 
+		    		 );		 
+		  	}
+		    
 		     
 		     
-	    }
+}
 	    
 	   
-}
