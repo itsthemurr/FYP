@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class CreateAccActivity extends Activity
@@ -35,7 +36,7 @@ public class CreateAccActivity extends Activity
              "[a-zA-Z0-9][a-zA-Z0-9-]{1,64}" +
              "(" +
              "." +
-             "[a-zA-Z0-9][a-zA-Z0-9-]{2,25}" +
+             "[a-zA-Z0-9][a-zA-Z0-9-]{1,25}" +
              ")+"
 	);
 	 
@@ -53,7 +54,7 @@ public class CreateAccActivity extends Activity
 	 }
 	 
 	//Fullname validation (Setting the format & length)
-	 public final Pattern FULLNAME = Pattern.compile("[a-zA-Z0-9 ']{1,100}");
+	 public final Pattern FULLNAME = Pattern.compile("[a-zA-Z0-9 ']{1,50}" + "[ ]{1,1}" + "[a-zA-Z]{2,100}");
 	 
 	 private boolean checkFullname(String fullname)
 	 {
@@ -112,7 +113,7 @@ public class CreateAccActivity extends Activity
 			    				 String passwordval=password.getText().toString();
 			    				 String fullnameval=fullname.getText().toString();
 			    				 
-			    				 //Username, fullname, country & password must be of a certain length 
+			    				 //Validation is checked
 			    				 if(checkUsername(usernameval) == false)
 		    					 {
 		    						 username.setError("Username must be at least 5 characters long & can only contain letters, numbers, '_' or a '.'");
@@ -164,14 +165,17 @@ public class CreateAccActivity extends Activity
 												  
 												  try
 												  {
-									        			returnString = "";
+													  	returnString = "";
+									        		
 									        			JSONArray jArray = new JSONArray(result);
 									        			
 									        			for(int i=0;i<jArray.length();i++)
 									        			{
 									                         JSONObject json_data = jArray.getJSONObject(i);
-									                         Log.i("log_tag",json_data.getString("output")       
+									                         Log.i("log_tag",json_data.getString("val")       
 									                         );
+									                         
+									                         returnString = json_data.getString("val");
 									                         
 									                         int returnVal = Integer.parseInt(returnString);
 									                         
@@ -181,6 +185,7 @@ public class CreateAccActivity extends Activity
 									                         }
 									                         if (returnVal == 2)
 									                         {
+									                        	 Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_LONG).show();
 									                        	 Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
 									    				         startActivity(intent);
 									                         }
@@ -191,6 +196,7 @@ public class CreateAccActivity extends Activity
 									        		catch(JSONException e)
 									        		{
 									        			Log.e("log_tag", "Error parsing data "+e.toString());
+									        			Toast.makeText(getApplicationContext(), "Error Parsing", Toast.LENGTH_LONG).show();
 									        		}
 											      
 												  if (result == "one")
@@ -202,15 +208,13 @@ public class CreateAccActivity extends Activity
 											    	  Intent intent = new Intent(getApplicationContext(), Questions.class);
 											          startActivity(intent);
 											      }
-											      
-											     
-											      // store the result returned by PHP script that runs MySQL query
-			             	  
+
 											  }
 	
 										      catch (Exception e)
 										      {
-										      	  Log.e("log_tag","Error in http connection!!" + e.toString());     
+										      	  Log.e("log_tag","Error in http connection!!" + e.toString()); 
+										      	  Toast.makeText(getApplicationContext(), "Error in connection", Toast.LENGTH_LONG).show();
 									          }
 				    					 }
 				    					 
@@ -222,20 +226,11 @@ public class CreateAccActivity extends Activity
 			    					 
 			    					 
 			    			 }
-						          
-							          
-							          
-							          
-			    				 
+			 
 		    		 }
-			    			 
-			    			 
-		    			 
+			    			 			 
 		    		 );		 
 		  	}
 		    
-		     
-		     
+	     
 }
-	    
-	   
