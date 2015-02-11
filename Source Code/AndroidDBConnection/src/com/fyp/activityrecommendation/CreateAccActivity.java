@@ -172,25 +172,13 @@ public class CreateAccActivity extends Activity
 									        			for(int i=0;i<jArray.length();i++)
 									        			{
 									                         JSONObject json_data = jArray.getJSONObject(i);
-									                         Log.i("log_tag",json_data.getString("val")       
+									                         Log.i("log_tag","value:"+json_data.getString("value")       
 									                         );
 									                         
-									                         returnString = json_data.getString("val");
-									                         
-									                         int returnVal = Integer.parseInt(returnString);
-									                         
-									                         if (returnVal == 1)
-									                         {
-									                        	 username.setError("Username already exists");
-									                         }
-									                         if (returnVal == 2)
-									                         {
-									                        	 Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_LONG).show();
-									                        	 Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
-									    				         startActivity(intent);
-									                         }
-									                         
+									                         returnString = json_data.getString("result");
+									                            
 									        			}
+									        			
 									        		}
 									        		
 									        		catch(JSONException e)
